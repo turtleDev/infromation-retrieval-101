@@ -34,7 +34,7 @@ class Crawler:
 
     def _pipe(self, payload):
         for component in self._pipeline:
-            payload = component.process(payload, self)
+            payload = component.process(payload)
 
     def run(self):
         
@@ -79,7 +79,7 @@ class HackerNewsSpider:
 
 class PrintComponent:
 
-    def process(self, payload, crawler):
+    def process(self, payload):
         print(payload)
         return payload
 
